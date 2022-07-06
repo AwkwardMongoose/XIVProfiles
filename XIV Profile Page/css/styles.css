@@ -102,10 +102,10 @@ input {
     position: relative;
     height: 80vh;
     width: 100%;
-    gap: 2px;
+    gap: 3px;
     margin-top: 0.2vh;
     margin-bottom: 2px;
-    grid-template-columns: 14ch auto;
+    grid-template-columns: 9ch auto;
     grid-template-rows: auto 100%;
     grid-template-areas: 
     'topbar topbar'
@@ -175,7 +175,6 @@ input {
     animation-timing-function: linear;
     grid-template-areas: 
     'abilitylist'
-    'abilitybuttons'
     ;
     grid-area: sidepanel;
 }
@@ -186,13 +185,12 @@ input {
 }
 
 .abilitydiv {
-    padding-top: 0px;
-    display: flex;
-    flex-direction: column;
+
 }
 .abilitylist {
     width: 100%;
     height: 100%;
+    margin: 0;
     overflow: hidden;
     overflow-y: auto;
     list-style-type:none;
