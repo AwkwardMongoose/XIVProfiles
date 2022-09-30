@@ -117,11 +117,13 @@ input {
     position: relative;
     height: 90vh;
     width: 100%;
+    max-width: 65ch;
+    max-height: 55ch;
     gap: 3px;
     margin-top: 0.2vh;
     margin-bottom: 2px;
     grid-template-columns: 9ch auto;
-    grid-template-rows: min-content auto;
+    grid-template-rows: 117px auto;
     grid-template-areas: 
     'topbar topbar'
     'sidepanel mainpanel'
@@ -147,6 +149,10 @@ input {
     animation-direction: normal;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    grid-template-columns: min-content max-content;
+    grid-template-areas: 
+    'avat name'
+    ;
     grid-area: topbar;
 }
 
@@ -192,10 +198,35 @@ input {
     animation-direction: normal;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
     grid-template-areas: 
     'abilitylist'
     ;
     grid-area: sidepanel;
+}
+
+.profileimage {
+    width: min-content;
+    grid-area: avat;
+}
+
+.avatar {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.name {
+    margin: 0;
+    margin-top: 5px;
+    font-size: 1.4ch;
+    height: min-content;
+    line-height: 1ch;
+    grid-area: name;
 }
 
 @keyframes colorshift { 
@@ -330,6 +361,62 @@ input {
     grid-template-areas: 
     'pagecont'
     ;
+}
+
+.statgrid {
+    display: grid;
+    height: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    overflow-y: auto;
+    gap: 10px;
+    grid-template-columns: 16ch 4ch;
+    grid-template-rows: min-content auto;
+    grid-template-areas: 
+    'gridhead1 gridhead1 gridhead1 gridhead1 gridhead1'
+    'stathead stats statspace stathead2 stats2'
+    ;
+}
+
+.gridhead1 {
+    font-size: 1.2ch;
+    line-height: 1.5ch;
+    margin: auto;
+    height: min-content;
+    grid-area: gridhead1;
+}
+
+.stathead {
+    color: lightseagreen;
+    font-size: 1.1ch;
+    line-height: 1.8ch;
+    grid-area: stathead;
+}
+
+.stats {
+    font-size: 1.1ch;
+    line-height: 1.8ch;
+    grid-area: stats;
+}
+
+.stathead2 {
+    color: lightseagreen;
+    font-size: 1.1ch;
+    line-height: 1.8ch;
+    grid-area: stathead2;
+}
+
+.stats2 {
+    font-size: 1.1ch;
+    line-height: 1.8ch;
+    grid-area: stats2;
+}
+
+.statspace {
+    width: 30px;
+    grid-area: statspace;
 }
 
 .page1, .page2, .page3 {
